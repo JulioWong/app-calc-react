@@ -1,6 +1,8 @@
 import React from 'react'
 import Button from './components/Button'
+import MathOperations from './components/MathOperation'
 import Result from './components/Result'
+import Functions from './components/Functions'
 import './App.css';
 
 const App = () => {
@@ -21,21 +23,12 @@ const App = () => {
                 <button>9</button>
                 <button>0</button>
             </div>
-            <div className="functions">
-                <button>
-                    clear
-                </button>
-                <button>
-                    r
-                </button>
-            </div>
-            <div className="math-operations">
-                <button>+</button>
-                <button>-</button>
-                <button>*</button>
-                <button>/</button>
-                <button>=</button>
-            </div>
+            <Functions 
+                onContentClear={() => console.log("Conten Clear")}
+                onDelete={() => console.log("Conten Clear")}/>
+            <MathOperations 
+                onClickOperation={operation => console.log("Operacion:", operation)} 
+                onclickEqual = {equal => console.log("Operacion:", equal)}/>
         </main>
     )
 }
